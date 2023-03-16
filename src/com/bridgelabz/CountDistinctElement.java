@@ -24,12 +24,6 @@ public class CountDistinctElement {
             }
         }
 
-
-        for (int i = 0; i < n; i++) {
-            boolean isDistinct = true;
-
-
-        }
         System.out.println();
             System.out.println("count of distinct element is : " + distinctCount);
         }
