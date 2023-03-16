@@ -16,19 +16,19 @@ public class Hospital {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public List<Patient> getPatients() {
         return patients;
     }
 
-    public void setPatients(List<Patient> patients) {
-        this.patients = patients;
-    }
+
     public void addPatient(Patient patient){
         patients.add(patient);
 
+    }
+
+    @Override
+    public String toString() {
+        return "Hospital{" + "name=" + name +"\n" +",patients=" +patients+ "}";
     }
 }
