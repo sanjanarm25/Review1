@@ -4,16 +4,50 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class CountDistinctElement {
-    public static void main(String[] args) {
+    public static void countDistinct(int[] arr) {
+        int n = arr.length;
 
-        int[] inputArray = {1,2,3,4,2,3,5,6,7,8,9,9};  //input array
-        Set<Integer> distinctSet = new HashSet<Integer>();  //creating set to store the elements
-        for (int i=0 ; i < inputArray.length ; i++){               //running a loop into input array and add to set
-            distinctSet.add(inputArray[i]);
+        for (int i = 0; i < n; i++) {
+            boolean isDistinct = true;
+
+            for (int j = 0; j < i; j++) {
+                if (arr[i] == arr[j]) {
+                    isDistinct = false;
+                    break;
+                }
+            }
+
+            if (isDistinct) {
+                System.out.print(arr[i] + " ");
+
+            }
+        }
+
+        int distinctCount = 0;
+        for (int i = 0; i < n; i++) {
+            boolean isDistinct = true;
+
+            for (int j = 0; j < i; j++) {
+                if (arr[i] == arr[j]) {
+                    isDistinct = false;
+                    break;
+                }
+            }
+
+            if (isDistinct) {
+                distinctCount++;
+            }
+        }
+        System.out.println();
+            System.out.println("count of distinct element is : " + distinctCount);
+        }
+
+        public static void main (String[]args){
+        int[] arr ={1,2,3,4,4,5,6,7};
+        countDistinct(arr);
 
         }
-        System.out.println("count of distinct elements " + distinctSet.size());
-        System.out.println("distinct element: " + distinctSet);
-
     }
-}
+
+
+
